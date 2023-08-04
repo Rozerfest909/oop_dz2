@@ -9,6 +9,9 @@
 // и методы доступа для него. Измените метод "приветствие" класса "Кот", чтобы он выводил приветствие вида
 // "Мяу! Меня зовут <имя>. Мне <возраст> года(лет). Мой владелец - <имя владельца>.".
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 public class T1 implements Const {
     public static void main(String[] args) {
@@ -18,14 +21,14 @@ public class T1 implements Const {
                 + " года (лет)." + " Мой владелец " + people.getName());
         Job_2 t2 = new Job_2();
 
-        for (int i = 0; i <= 2; i++) {
+        for (int i = 0; i < 6; i++) {
             System.out.println("Следующее значение " + t2.getNext());
         }
         System.out.println("Сброс ");
         t2.reset();
         System.out.println("Начальное значение " + person.getAge());
         t2.setNum(4);
-        for (int i = 0; i <= 2; i++){
+        for (int i = 0; i <= 3; i++){
             System.out.println("Следующее значение " + t2.getNext());
         }
 
@@ -47,8 +50,38 @@ public class T1 implements Const {
         t4.getOwner();
         System.out.println("Владелец: " + t4.getOwner());
         System.out.println("Кот: " + t4.getCat());
-    }
 
+        Inter inter = (x) -> x;
+        Inter inter_2 = (y) -> 2023 - y;
+        System.out.println("Родился  " + inter.getInter(person.getAge()) + " года (лет) назад");
+        System.out.println("Год рождения кота: " + inter_2.getInter(person.getAge()));
+
+
+        List<AnimalCats> cats = new ArrayList<>();
+        cats.add(new AnimalCats("Бэтмен", 7, 8,"Черный"));
+        cats.add(new AnimalCats("Робин", 2, 5,"Черный в горошек"));
+        cats.add(new AnimalCats("Кот-провокатор", 10, 7,"Рыжий"));
+        cats.add(new AnimalCats("Барс", 4, 6,"Тигровый"));
+        cats.add(new AnimalCats("Пупс", 7, 3,"Белый"));
+        cats.add(new AnimalCats("Пушистик", 1, 5,"Серый"));
+        cats.add(new AnimalCats("Пикачу", 3, 6,"Рыжий"));
+
+        Comparator<AnimalCats> ageAndColorComparator = new Comparator<AnimalCats>() {
+            @Override
+            public int compare(AnimalCats cat1, AnimalCats cat2) {
+                int ageCompare = cat1.getAge() - cat2.getAge();
+                if(ageCompare != 0) {
+                    return ageCompare;
+                }
+                return cat1.getWeight() - cat2.getWeight();
+            }
+        };
+        cats.sort(ageAndColorComparator);
+        for (AnimalCats cat : cats){
+            System.out.println(cat);
+
+        }
+    }
 }
 
 class Cat implements I2 {
@@ -85,7 +118,6 @@ class Cat implements I2 {
         System.out.println("Сказал " + greet);
     }
 }
-
 class Owner {
     private String name_owner;
 
