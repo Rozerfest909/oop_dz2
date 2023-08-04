@@ -16,40 +16,40 @@ import java.util.List;
 public class T1 implements Const {
     public static void main(String[] args) {
         Cat person = new Cat("Мяу!", "Барс", 4);
-        Owner people = new Owner("Александр");
-        System.out.println(person.getGreet() + "Меня зовут " + person.getName() + ". Мне " + person.getAge()
-                + " года (лет)." + " Мой владелец " + people.getName());
-        Job_2 t2 = new Job_2();
-
-        for (int i = 0; i < 6; i++) {
-            System.out.println("Следующее значение " + t2.getNext());
-        }
-        System.out.println("Сброс ");
-        t2.reset();
-        System.out.println("Начальное значение " + person.getAge());
-        t2.setNum(4);
-        for (int i = 0; i <= 3; i++){
-            System.out.println("Следующее значение " + t2.getNext());
-        }
-
-        for (int i = MIN; i < 6; i++){
-            if(i == person.getAge()){
-                System.out.println("Возможно это кот Шрёдингера");
-            }
-            else if(i < MAX){
-                System.out.println("Возможно это кот не Шрёдингера");
-            }
-            else
-                System.out.println(ERROR);
-        }
-        person.message1();
-        person.message2();
-        person.message3();
-
-        LF_2 t4 = new LF_2();
-        t4.getOwner();
-        System.out.println("Владелец: " + t4.getOwner());
-        System.out.println("Кот: " + t4.getCat());
+//        Owner people = new Owner("Александр");
+//        System.out.println(person.getGreet() + "Меня зовут " + person.getName() + ". Мне " + person.getAge()
+//                + " года (лет)." + " Мой владелец " + people.getName());
+//        Job_2 t2 = new Job_2();
+//
+//        for (int i = 0; i < 6; i++) {
+//            System.out.println("Следующее значение " + t2.getNext());
+//        }
+//        System.out.println("Сброс ");
+//        t2.reset();
+//        System.out.println("Начальное значение " + person.getAge());
+//        t2.setNum(4);
+//        for (int i = 0; i <= 3; i++){
+//            System.out.println("Следующее значение " + t2.getNext());
+//        }
+//
+//        for (int i = MIN; i < 6; i++){
+//            if(i == person.getAge()){
+//                System.out.println("Возможно это кот Шрёдингера");
+//            }
+//            else if(i < MAX){
+//                System.out.println("Возможно это кот не Шрёдингера");
+//            }
+//            else
+//                System.out.println(ERROR);
+//        }
+//        person.message1();
+//        person.message2();
+//        person.message3();
+//
+//        LF_2 t4 = new LF_2();
+//        t4.getOwner();
+//        System.out.println("Владелец: " + t4.getOwner());
+//        System.out.println("Кот: " + t4.getCat());
 
         Inter inter = (x) -> x;
         Inter inter_2 = (y) -> 2023 - y;
