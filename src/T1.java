@@ -66,7 +66,7 @@ public class T1 implements Const {
         cats.add(new AnimalCats("Пушистик", 1, 5,"Серый"));
         cats.add(new AnimalCats("Пикачу", 3, 6,"Рыжий"));
 
-        Comparator<AnimalCats> ageAndColorComparator = new Comparator<AnimalCats>() {
+        Comparator<AnimalCats> ageComparator = new Comparator<AnimalCats>() {
             @Override
             public int compare(AnimalCats cat1, AnimalCats cat2) {
                 int ageCompare = cat1.getAge() - cat2.getAge();
@@ -76,7 +76,7 @@ public class T1 implements Const {
                 return cat1.getWeight() - cat2.getWeight();
             }
         };
-        cats.sort(ageAndColorComparator);
+        cats.sort(ageComparator);
         for (AnimalCats cat : cats){
             System.out.println(cat);
 
